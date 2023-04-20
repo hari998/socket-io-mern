@@ -5,6 +5,7 @@ import { Server } from "socket.io";
 // import { PORT, NODE_ENV } from "./environment/exportEnv.js";
 
 import * as dotenv from "dotenv";
+import { apiRouter } from "./routes/routes.js";
 dotenv.config({ path: "./environment/config.env", debug: true });
 // import { connectDB } from "./database/connect.js";
 
@@ -20,8 +21,10 @@ const DB_NAME = process.env.DB_NAME;
 
 const app = express();
 
+app.use("/api", apiRouter);
+
 app.get("/root", (req, res) => {
-  res.send("hello from server root");
+  res.json({ message: "hello from server root" });
 });
 
 app.get("/hello", (req, res) => {
