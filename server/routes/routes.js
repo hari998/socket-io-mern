@@ -1,8 +1,12 @@
-// import { Router as apiRouter } from "express/Router";
-import express from "express";
+console.log("routes- routes");
+
+const express = require("express");
 const apiRouter = express.Router();
-import { home } from "../controller/homeController.js";
+const { home, insertData } = require("../controller/homeController");
 
-apiRouter.route("/xyz").get(home);
+apiRouter.route("/home").get(home);
+apiRouter.route("/insert/data").get(insertData);
 
-export { apiRouter };
+module.exports = apiRouter;
+
+// console.dir(module, { depth: null });
