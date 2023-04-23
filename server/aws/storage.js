@@ -1,19 +1,21 @@
-import * as dotenv from "dotenv";
-dotenv.config({ path: "./environment/config.env", debug: true });
+console.log("aws- storage");
 
-import S3 from "aws-sdk/clients/s3";
+// import * as dotenv from "dotenv";
+// dotenv.config({ path: "./environment/config.env", debug: true });
 
-// export const s3Uploadsv2 = async (mulfile) => {
-export const s3Uploadsv2 = async () => {
-  const s3 = new S3();
+// import S3 from "aws-sdk/clients/s3";
 
-  const param = {
-    Bucket: process.env.AWS_BUCKET_NAME,
-    Key: "uploads/hello",
-    Body: "hello-world",
-  };
-  return await s3.upload(param).promise(); //callback based, turn it into promise by using .promise()
-};
+// // export const s3Uploadsv2 = async (mulfile) => {
+// export const s3Uploadsv2 = async () => {
+//   const s3 = new S3();
 
-// 18:17
-// 18:24
+//   const param = {
+//     Bucket: process.env.AWS_BUCKET_NAME,
+//     Key: "uploads/hello",
+//     Body: "hello-world",
+//   };
+//   return await s3.upload(param).promise(); //callback based, turn it into promise by using .promise()
+// };
+
+// // 18:17
+// // 18:24
