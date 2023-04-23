@@ -1,3 +1,5 @@
+console.log("api - insert");
+
 import { myProject } from "../database/exportCollection.js";
 
 async function input() {
