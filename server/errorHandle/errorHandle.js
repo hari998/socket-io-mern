@@ -13,9 +13,11 @@ module.exports = {
       config: error.config,
       stack: error?.stack,
     };
+
     if (NODE_ENV === "production") {
       delete returnError.stack;
     }
+
     try {
       if (error.response) {
         // The request was made but no response was received

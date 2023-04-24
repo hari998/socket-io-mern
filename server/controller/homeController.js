@@ -1,4 +1,5 @@
 console.log("controller- homeController");
+const fs = require("fs");
 
 const { recipes } = require("../data");
 const { getDb } = require("../database/connect");
@@ -23,7 +24,22 @@ module.exports = {
       // // console.log("myColl", myColl);
 
       /**execute operation using db method */
+      const recipes = [
+        { title: "Dangal", rating: "Not Rated" },
+        { title: "The Boss Baby", rating: "PG" },
+      ];
+      // let insertManyResult = await myColl.insertMany(recipes); //MongoBulkWriteError: E11000
       let insertManyResult = await myColl.insertMany(recipes);
+
+      /**
+       * node
+       */
+
+      // let str = JSON.stringify(insertManyResult);
+
+      // const file = fs.createWriteStream("./controller/file.txt"); //it creates at root of project
+      // file.write(`nodejs is js runtime, ${str}`);
+      //
 
       // /**in one line (same thing as above but in one line) starts here */
       // let insertManyResult = await database
