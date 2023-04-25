@@ -27,6 +27,8 @@ app.post("/send", (req, res) => {
   res.json({ message: "Hello from server /send!" });
 });
 
+//add cors
+
 /**
  *  __dirname doesnt work in ESM, so using path.resolve
  */
