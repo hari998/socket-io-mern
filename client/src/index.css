@@ -1,3 +1,19 @@
 body {
   background-color:#4c7273;
 }
+
+div.message-interface {
+  outline: 5px solid white;
+  margin: 13px;
+  padding: 10px;
+}
+
+div.message-box {
+  outline: 2px solid yellow;
+  margin: 3px;
+}
+
+div.input-message-box {
+  outline: 2px solid red;
+  margin: 3px;
+}
