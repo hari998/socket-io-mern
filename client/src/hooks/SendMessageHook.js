@@ -24,6 +24,8 @@ export function useSendMessage() {
     setData("sending...");
 
     //socket
+    console.log("socket in onSubmitt--", socket);
+
     socket.timeout(5000).emit("socket:send", values, () => {
       setIsLoading(false);
     });
