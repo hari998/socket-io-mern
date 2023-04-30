@@ -11,7 +11,7 @@ export const Home = () => {
 
         <div>
           <p>
-            this is Header and outlet below, ((outlet renders all elements
+            this is Header below and outlet below, ((outlet renders all elements
             mentioned on parent path ("here parent path is "/", see router.js)
             ))
           </p>
