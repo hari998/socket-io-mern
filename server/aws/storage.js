@@ -1,4 +1,4 @@
-console.log("aws- storage");
+// console.log("aws- storage");
 
 // import * as dotenv from "dotenv";
 // dotenv.config({ path: "./environment/config.env", debug: true });
