@@ -1,23 +1,22 @@
-console.log("app-");
+// console.log("app-");
 
 require("dotenv").config({ path: "./.env", debug: true });
 
-//db
-// get driver connection
-// const { connectToServer } = require("./database/connect.js");
-//db
-
 const express = require("express");
+var cors = require("cors");
+const path = require("path");
 const apiRouter = require("./routes/routes.js");
 const { handleError } = require("./errorHandle/errorHandle.js");
 
 const app = express();
+app.use(cors());
+
+app.use("*", (req, res, next) => {
+  console.log("ori", req.headers.origin);
+  next();
+});
 
 app.use("/api", apiRouter);
-
-app.get("/root", (req, res) => {
-  res.json({ message: "hello from server root" });
-});
 
 app.get("/hello", (req, res) => {
   res.json({ message: "Hello from server!" });
@@ -28,6 +27,35 @@ app.post("/send", (req, res) => {
 });
 
 //add cors
+
+/**
+ * serve static files
+ */
+
+// if (process.env.NODE_ENV == "production") {
+//   console.log("pathhhh prod--", path.join(__dirname, "../client/build"));
+//   app.use(express.static(path.join(__dirname, "../client/build")));
+//   app.get("*", (req, res) => {
+//     res.sendFile(
+//       path.resolve(__dirname, "..", "client", "build", "index.html")
+//     );
+//   });
+// } else {
+//   console.log("pathhh dev--", path.join(__dirname, "../client/public"));
+//   app.use(express.static(path.join(__dirname, "../client/public")));
+//   app.get("*", (req, res) => {
+//     res.sendFile(
+//       path.resolve(__dirname, "..", "client", "public", "index.html")
+//     );
+//   });
+// }
+
+//seems to be not working after express.static
+// app.get("/", (req, res) => {
+//   console.log("inside / path", path.resolve(__dirname, "public", "index.html"));
+//   res.sendFile(path.resolve(__dirname, "public", "index.html"));
+// });
+//
 
 /**
  *  __dirname doesnt work in ESM, so using path.resolve
