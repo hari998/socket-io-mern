@@ -9,6 +9,8 @@ import { Events } from "../Socket/MyEvents";
 export function MessageInterface() {
   //socket state
   const [isConnected, setIsConnected] = useState(socket.connected);
+  console.log("isConnected--", isConnected);
+
   const [fooEvents, setFooEvents] = useState(["nothing"]);
   const [socketReceive, setSocketReceive] = useState(["xx nothing"]);
 
@@ -64,7 +66,7 @@ export function MessageInterface() {
 
   return (
     <>
-      <div>
+      <div className="message-interface">
         <ConnectionState isConnected={isConnected} />
         <Events events={fooEvents} />
         <ConnectionManager />
