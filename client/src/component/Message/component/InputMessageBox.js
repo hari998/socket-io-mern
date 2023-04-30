@@ -6,12 +6,12 @@ export function InputMessageBox({ sendDataToParent }) {
 
   return (
     <>
-      <div>
+      <div className="input-message-box">
         <div>
           <form onSubmit={handleSubmit}>
-            <h1>Notebook</h1>
+            <h1>message box</h1>
             <label>
-              <b>Message</b>
+              <b>Write Message: </b>
             </label>
             <input
               type="text"
@@ -29,7 +29,9 @@ export function InputMessageBox({ sendDataToParent }) {
         </div>
 
         <div>
+          <p>something will appear here..</p>
           <p>{!data ? "" : sendDataToParent(data)}</p>
+          <p>something will appear here..</p>
         </div>
       </div>
     </>
