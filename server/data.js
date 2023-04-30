@@ -1,4 +1,4 @@
-console.log("data-");
+// console.log("data-");
 
 const recipes = [
   { title: "Dangal", rating: "Not Rated" },
