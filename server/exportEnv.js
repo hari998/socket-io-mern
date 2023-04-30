@@ -1,4 +1,4 @@
-console.log("exportEnv-");
+// console.log("exportEnv-");
 
 // export const PORT = process.env.PORT;
 // export const NODE_ENV = process.env.NODE_ENV;
