@@ -5,10 +5,19 @@ import { io } from "socket.io-client";
 
 const URL = "http://localhost:8000";
 
-export const socket = io(URL, {
+// export const socket = io(URL, {
+//   autoConnect: false,
+//   withCredentials: true,
+//   // extraHeaders: {
+//   //   "my-custom-header": "abcd"
+//   // }
+// });
+export const socket = io.connect(URL, {
   autoConnect: false,
   withCredentials: true,
   // extraHeaders: {
   //   "my-custom-header": "abcd"
   // }
 });
+
+console.log("exp const socket--", socket);
